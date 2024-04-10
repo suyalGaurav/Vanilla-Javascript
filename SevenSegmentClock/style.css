@@ -1,0 +1,153 @@
+:root {
+  --background-color: black;
+  --segment-color: #cc0000;
+  ;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0.15; 
+  }
+  to {
+    opacity: 1; 
+  }
+}
+
+body, p, button {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--background-color);
+  min-width: 820px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 25px;
+  width: 100vw;
+  padding-right: 10px;
+}
+
+.fullscreen-compress-btn {
+  background-color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.fullscreen-icon, .compress-icon {
+  color: #fff;
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.digital-clock {
+  height: calc(100vh - 25px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.digital-clock .hours, .digital-clock .minutes, .digital-clock .seconds {
+  margin: 0 20px;
+}
+
+.separator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.separator span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: var(--segment-color);
+  border-radius: 50%;
+  opacity: 1;
+  box-shadow: 0 0 50px rgba(255,0,0,.7);
+}
+
+.hours, .minutes, .seconds {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.horizontal-segment, .vertical-segment {
+  width: 100%;
+}
+
+.horizontal-segment {
+  width: 100%;
+}
+
+.vertical-segment {
+  display: flex;
+  justify-content: space-between;
+}
+
+.horizontal-segment span, .vertical-segment span {
+  display: inline-block;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.horizontal-segment span {
+  height: 8px;
+  width: 60px;
+}
+
+.vertical-segment span {
+  position: relative;
+  height: 60px;
+  width: 8px;
+}
+
+/* percentage value of left,right will be calculated on the basis of the parent size */
+.vertical-segment span:nth-child(1) {
+  left: -10px; 
+}
+
+.vertical-segment :nth-child(2) {
+  right: -10px;
+}
+
+.segment {
+  background-color: var(--segment-color);
+  opacity: 0.15;
+}
+
+.segment.on {
+  opacity: 1;
+  box-shadow: 0 0 50px rgba(255,0,0,.7);
+  animation: fade-in 0.3s ease forwards;
+}
