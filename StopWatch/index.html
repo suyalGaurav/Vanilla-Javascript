@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Stop Watch</title>
+        <link rel="icon" href="./assets/stopwatch_771495.png" type="image/png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main class="main-container">
+            <section class="flex-center stop-watch-section">
+                <div class="flex-center wrapper">
+                    <div class="flex-center hour-circle">
+                        <p class="hours-text">Hour</p>
+                        <div class="flex-center minutes-circle">
+                            <p class="minutes-text">Minutes</p>
+                            <div class="flex-center seconds-circle">
+                                <p class="seconds-text">Seconds</p>
+                                <div class="flex-center stop-watch-box">
+                                   <div class="flex-center stop-watch">
+                                        <h2>Stopwatch</h2>
+                                        <div class="stop-watch-display">
+                                            <span id="hours" title="hours">00</span>
+                                            <p class="flex-center circular-dots">
+                                                <span class="circular-dot"></span>
+                                                <span class="circular-dot"></span>
+                                            </p>
+                                            <span id="minutes" title="minutes">00</span>
+                                            <p class="flex-center circular-dots">
+                                                <span class="circular-dot"></span>
+                                                <span class="circular-dot"></span>
+                                            </p>
+                                            <span id="seconds" title="seconds">00</span>
+                                        </div>
+                                        <div class="stopwatch-buttons">
+                                            <div class="pause-play">
+                                                <button class="pause-play-buttons">
+                                                    <span class= "pause-icon" title="pause">
+                                                        <!-- pause -->
+                                                        <i class="fa-solid fa-pause "></i>
+                                                    </span>
+                                                    <span class="play-icon visible-icon" title="start">
+                                                        <!-- play -->
+                                                        <i class="fa-solid fa-play"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="reset">
+                                                <button class="reset-btn">
+                                                    <span class="reset-icon" title="reset">
+                                                        <!-- reset -->
+                                                        <i class="fa-solid fa-rotate-right"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </section>   
+        </main>
+    </body>
+    <script src="https://kit.fontawesome.com/80fff10ff5.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</html>
