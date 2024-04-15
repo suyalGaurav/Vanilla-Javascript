@@ -1,0 +1,134 @@
+
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  
+  ol, ul {
+    list-style: none;
+  }
+  
+  /* img {
+    max-width: 100%;
+    height: auto;
+  } */
+
+  a:active, a:hover {
+    color: black;
+  }
+  
+  :root{
+    --primary-bg-color: #5EC576;
+    --primary-font-color: #444444;
+    --nav-bg-color: #FFFFF2;
+    --secondary-font-color: #222;
+  }
+
+  a {
+    color: var(--primary-font-color);
+    text-decoration: none;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+body {
+    min-height: 100vh;
+    padding: 0 1.875rem;
+}
+
+header {
+    top: 0%;
+    left: 0%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    background-color: var(--nav-bg-color); /* activate this bg when user scrolls past the hero-banner
+    /* background-color: red; */
+    padding: 0 5.625rem;
+    z-index: 100;
+}
+
+header, .open-account-btn {
+    font-size: 1.0625rem;
+}
+
+.bankist-logo {
+    height: 2.8125rem;
+}
+
+.nav-links-ul {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    margin-left: 2.5rem;
+}
+
+.nav-link .open-account-btn {
+    background-color: var(--primary-bg-color);
+    border: none;
+    padding: 0.5rem 1.5625rem; 
+    border-radius: 1.875rem;
+    min-height: 3rem;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    color: var(--secondary-font-color);
+}
+
+main {
+    margin-top: 90px;
+}
+
+.hero-banner {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    background-color: orange;
+
+}
+
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+}
+
+.hero-image {
+    max-width: 460px;
+}
+
+
+
+/* .hero-image, .hero-banner {
+    margin-left: auto;
+} */
+
+/* Understand this code first or else
+implement your own */
+/* .hero-banner {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+
+.hero-image {
+    width: 100%;
+    grid-column: 2/3;
+    grid-row: 1/span 4;
+} */
