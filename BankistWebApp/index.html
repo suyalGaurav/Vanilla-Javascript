@@ -1,62 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" type="image/png" href="assets/icon.png" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="style.css" />
-    <title>Bankist-web-app</title>
-   </head>
+    <title>Bankist | When Banking meets Minimalist</title>
+</head>
 
-   <body>
-        <header>
-            <img src="assets/logo.png" alt="bankist-logo" class="bankist-logo">
-            <input type="checkbox" class="three-bars-checkbox">
-            <a class="three-bars">
-                <i class="fa-solid fa-bars"></i>
-            </a>
-            <nav class="nav-links">
-                <ul class="nav-links-ul">
-                    <li class="nav-link"><a href="#">Features</a></li>
-                    <li class="nav-link"><a href="#">Operations</a></li>
-                    <li class="nav-link"><a href="#">Testimonials</a></li>
-                    <li class="nav-link">
-                        <button class="open-account-btn">
-                            Open account
+<body>
+    <header>
+        <img src="assets/logo.png" alt="bankist-logo" class="bankist-logo">
+        <input type="checkbox" class="three-bars-checkbox">
+        <a class="three-bars">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+        <nav class="nav-links">
+            <ul class="nav-links-ul">
+                <li class="nav-link"><a href="#">Features</a></li>
+                <li class="nav-link"><a href="#">Operations</a></li>
+                <li class="nav-link"><a href="#">Testimonials</a></li>
+                <li class="nav-link">
+                    <button class="open-account-btn">
+                        Open account
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <!-- SECTION-1 -->
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h1 class="hero-heading">
+                    When
+                    <span>banking</span>
+                    meets
+                    <span>minimalist</span>
+                </h1>
+                <h4 class="hero-subheading">A simpler banking experience for a simpler life.</h4>
+                <button class="hero-button">Learn more ↓</button>
+            </div>
+            <div class="hero-image">
+                <img src="assets/hero.png" alt="hero-image" class="hero-image">
+            </div>
+        </section>
+
+
+        <!-- SECTION-2 -->
+        <section class="features">
+            <div class="section-description">
+                <h2>Features</h2>
+                <h3 class="section-heading">Everything you need in a modern bank and more.</h3>
+            </div>
+
+            <div class="features-all">
+                <article class="feature-details">
+                    <div class="feature-image">
+                        <img src="assets/digital.jpg" alt="computer-image">
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg>
+                                <use xlink:href="assets/icons.svg#icon-monitor"></use>
+                            </svg>
+                        </div>
+                        <h4 class="feature-heading">100% digital bank</h4>
+                        <p class="feature-description">Welcome to our 100% digital bank, where convenience meets
+                            security. Experience seamless banking like never before, where managing your finances is
+                            just a click away.</p>
+                    </div>
+                </article>
+
+                <article class="feature-details">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg>
+                                <use xlink:href="assets/icons.svg#icon-trending-up"></use>
+                            </svg>
+                        </div>
+                        <h4 class="feature-heading">Watch your money grow</h4>
+                        <p class="feature-description">Discover our range of investment options designed to fit your
+                            goals. Track your portfolio's performance easily and make informed decisions with our
+                            intuitive platform.</p>
+                    </div>
+                    <div class="feature-image">
+                        <img src="assets/grow.jpg" alt="Plant">
+                    </div>
+                </article>
+
+                <article class="feature-details">
+                    <div class="feature-image">
+                        <img src="assets/card.jpg" alt="Credit card">
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg>
+                                <use xlink:href="assets/icons.svg#icon-credit-card"></use>
+                            </svg>
+                        </div>
+                        <h4 class="feature-heading">Free debit card included</h4>
+                        <p class="feature-description">Enjoy hassle-free access to your funds with our complimentary
+                            debit card. Make purchases online and in-store, withdraw cash at ATMs worldwide, and manage
+                            your finances with ease.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECTION-3 -->
+        <section class="operations">
+            <div class="section-description">
+                <h2>Operations</h2>
+                <h3 class="section-heading">Everything as simple as possible, but no simpler.</h3>
+            </div>
+
+            <div class="operation-tab-container">
+                <div class="operation-buttons">
+                        <button class="button-1">
+                            <span>01</span>
+                            Instant Transfers
                         </button>
-                    </li>
-                </ul>
-            </nav>
 
-        </header>
-        <main>
-            <section class="hero-banner">
-                <div class="hero-content">
-                    <h1 class="hero-heading">
-                        When 
-                        <span>banking</span> 
-                        meets 
-                        <span>minimalist</span>
-                    </h1>
-                    <h4 class="hero-subheading">A simpler banking experience for a simpler life.</h4>
-                    <button class="hero-button">Learn more ⬇</button>
+                        <button class="button-2">
+                            <span>02</span>
+                            Instant Loans
+                        </button>
+                    
+                        <button class="button-3">
+                            <span>03</span>
+                            Instant Closing
+                        </button>
                 </div>
-                <div class="hero-image">
-                    <img src="assets/hero.png" alt="hero-image" class="hero-image">
-                </div>
-            </section>
-        </main>
-        <footer>
+                <!-- operation-content-1 -->
+                <article class="operation-content operation-content-1">
+                    <div class="operation-icon operation-icon-1">
+                        <svg>
+                            <use xlink:href="assets/icons.svg#icon-upload"></use>
+                        </svg>
+                    </div>
+                    <div class="operation-detail">
+                        <h4 class="operation-heading">
+                            Transfer money to anyone, instantly! No fees, no BS.
+                        </h4>
+                        <p class="operation-description">
+                            Experience the freedom to transfer money instantly to anyone, hassle-free! Bankist offers seamless 
+                            transactions with no fees and no hidden charges. Whether you're sending money to family, 
+                            friends, or colleagues, enjoy the convenience of swift and secure transfers.
+                        </p>
+                    </div>
+                </article>
+                <!-- operation-content-2 -->
+                <article class="operation-content operation-content-2">
+                    <div class="operation-icon operation-icon-2">
+                        <svg>
+                            <use xlink:href="assets/icons.svg#icon-home"></use>
+                        </svg>
+                    </div>
+                    <div class="operation-detail">
+                        <h4 class="operation-heading">
+                            Buy a home or make your dreams come true, with instant loans.
+                        </h4>
+                        <p class="operation-description">
+                            Achieving your dream of homeownership is within reach with our instant loan options.
+                             Whether you're buying your first home or upgrading to your dream house, 
+                            our hassle-free loan process makes it easy to turn your aspirations into reality.
+                        </p>
+                    </div>
+                </article>
+                <!-- operation-3 -->
+                <article class="operation-content operation-content-3">
+                    <div class="operation-icon operation-icon-3">
+                        <svg>
+                            <use xlink:href="assets/icons.svg#icon-user-x"></use>
+                        </svg>
+                    </div>
+                    <div class="operation-detail">
+                        <h4 class="operation-heading">
+                            No longer need your account? No problem! Close it instantly.
+                        </h4>
+                        <p class="operation-description">
+                            Ready to part ways with your account? No worries! Instantly close it hassle-free.
+                            At Bankist, we make managing your finances as effortless as possible, 
+                            including saying goodbye when the time comes.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-        </footer>
+        <!-- SECTION-4 -->
+        <section class="testimonials">
+            <div class="section-description">
+                <h2>Not sure yet?</h2>
+                <h3 class="section-heading">Millions of Bankists are already making their lifes simpler.</h3>
+            </div>
+            <div class="testimonial-carousel">
+                <div class="previous-carousel-card">
+                    <button><-</button>
+                </div>
+                <div class="testimonial">
+                    <h3 class="testimonial-heading">Best financial decision ever!</h3>
+                    <p class="testimonial-description">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                        Accusantium quas quisquam non? Quas voluptate nulla minima deleniti 
+                        optio ullam nesciunt, numquam corporis et asperiores laboriosam sunt, 
+                        praesentium suscipit blanditiis. Necessitatibus id alias reiciendis,
+                        perferendis facere pariatur dolore veniam autem esse non voluptatem saepe provident nihil molestiae.
+                    </p>
+                </div>
+                <div class="next-carousel-card">
+                    <button>-></button>
+                </div>
+            </div>
+           
+        </section>
+
+    </main>
+
+
+
+    <footer>
+
+    </footer>
     <script src="https://kit.fontawesome.com/80fff10ff5.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-   </body>
-</html> 
+</body>
+
+</html>

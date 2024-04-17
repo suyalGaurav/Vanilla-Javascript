@@ -19,7 +19,9 @@ h5,
 h6,
 p,
 ol,
-ul, input {
+ul,
+input,
+button {
   margin: 0;
   padding: 0;
   font-weight: normal;
@@ -30,31 +32,41 @@ ul {
   list-style: none;
 }
 
-
 a:active,
 a:hover {
   color: black;
 }
 
 :root {
-  --primary-bg-color: #5ec576;
-  --primary-font-color: #444444;
-  --nav-bg-color: #fffff2;
-  --secondary-font-color: #222;
+  --color-primary: #444444;
+  --color-primary-shade: #222;
+  --color-secondary: #5ec576;
+  /* --color-secondary-shade: #459056; */
+  --color-secondary-shade: #4bbb7d;
+  --color-secondary-opacity: #5ec5763a;
+  --color-tertiary: #ffcb03;
+  --color-tertiary-shade: #ffbb00;
+  --color-tertiary-opacity: #ffcd0331;
+  --color-red: #ff585f;
+  --color-red-shade: #fd424b;
+  --color-red-opacity: #ff58602d;
+  --bg-color-nav:rgba(255, 255, 255, 0.95);
   --gradient-primary: linear-gradient(to top left, #39b385, #9be15d);
 }
 
 a {
-  color: var(--primary-font-color);
+  color: var(--color-primary);
   text-decoration: none;
 }
 
 button {
   cursor: pointer;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
 body {
   min-height: 100vh;
+  background-color: #f3f3f3;
 }
 
 header {
@@ -65,70 +77,70 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 90px;
+  height: 5.625rem;
   font-size: 1.0625rem;
   padding: 0 5.625rem;
   z-index: 100;
   background-color: var(
-    --nav-bg-color
+    --bg-color-nav
   ); /* activate this bg when user scrolls past the hero-banner
     /* background-color: red; */
 
-   .nav-link {
+  .nav-link {
     margin-left: 2.5rem;
   }
 
-   .open-account-btn {
+  .open-account-btn {
     font-size: 1.0625rem;
   }
 
-   .bankist-logo {
+  .bankist-logo {
     height: 2.8125rem;
   }
 
-   .nav-links-ul {
+  .nav-links-ul {
     display: flex;
     align-items: center;
   }
 
-   .nav-link .open-account-btn {
-    background-color: var(--primary-bg-color);
+  .nav-link .open-account-btn {
+    background-color: var(--color-secondary);
     border: none;
     padding: 0.5rem 1.5625rem;
     border-radius: 1.875rem;
     min-height: 3rem;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
-    color: var(--secondary-font-color);
+    color: var(--color-primary-shade);
   }
 
-   .three-bars,  .three-bars-checkbox {
+  .three-bars,
+  .three-bars-checkbox {
     display: none;
   }
 
   @media screen and (max-width: 965px) {
-      font-size: 1rem;
-      padding: 0 1.5rem;
+    font-size: 1rem;
+    padding: 0 1.5rem;
 
-       .open-account-btn {
-        font-size: 1rem;
-      }
-  
-       .nav-link {
-        margin-left: 1rem;
-      }
+    .open-account-btn {
+      font-size: 1rem;
+    }
+
+    .nav-link {
+      margin-left: 1rem;
+    }
   }
 
   @media screen and (max-width: 720px) {
-
     .nav-links {
       position: absolute;
       top: 90px;
       left: 0%;
       opacity: 1;
       width: 100%;
-      transform: scale(100%,0%);
+      transform: scale(100%, 0%);
       transform-origin: top;
-      transition: all 1s;
+      transition: all 500ms;
     }
 
     .nav-links-ul {
@@ -137,59 +149,60 @@ header {
       justify-content: center;
       align-items: center;
       width: 100vw;
+      /* Change this */
       background-color: rgb(233, 223, 223);
       z-index: 2;
 
-       .nav-link {
-        padding: 10px 0px;
+      .nav-link {
+        padding: 0.625rem 0;
         width: 100%;
         text-align: center;
         transition: all 300ms;
         margin-left: 0;
       }
 
-       .nav-link:hover {
+      /* Change this */
+      .nav-link:hover {
         background-color: grey;
       }
 
-       .nav-link:nth-of-type(4) {
+      .nav-link:nth-of-type(4) {
         padding: 0;
       }
 
-       .nav-link:nth-of-type(4) .open-account-btn {
+      .nav-link:nth-of-type(4) .open-account-btn {
         width: 100%;
         height: 100%;
         border: none;
         border-radius: 0;
         transition: all 300ms;
-
       }
 
-       .open-account-btn:hover {
-        background-color: #459056;
+      .open-account-btn:hover {
+        background-color: var(--color-secondary-shade);
       }
     }
 
-
-     .three-bars,  .three-bars-checkbox {
+    .three-bars,
+    .three-bars-checkbox {
       display: inline-block;
       position: absolute;
-      top: 32px;
+      top: 28px;
       right: 23px;
     }
 
-     .three-bars {
+    .three-bars {
       font-size: 1.7rem;
       position: absolute;
     }
 
-     .three-bars-checkbox {
+    .three-bars-checkbox {
       z-index: 3;
       opacity: 0;
       cursor: pointer;
       height: 36px;
       width: 24px;
-      background-color: #5ec576;
+      background-color: var(--color-secondary);
     }
 
     .three-bars-checkbox:checked ~ .nav-links {
@@ -198,7 +211,7 @@ header {
       transform: scale(100%, 100%);
     }
 
-    .three-bars-checkbox:checked ~ .nav-links .nav-links-ul  {
+    .three-bars-checkbox:checked ~ .nav-links .nav-links-ul {
       width: 100%;
     }
   }
@@ -207,28 +220,47 @@ header {
 /* main */
 
 main {
-  margin-top: 90px;
-  padding: 4.6875rem 1.875rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5.625rem;
+  padding: 4.6875rem 1.875rem 0rem;
 
-  .hero-banner {
-    display: flex;
-    justify-content: center;
-    height: calc(100vh - 90px);
+  @media screen and (max-width: 720px) {
+    row-gap: 4rem;
   }
-  
+
+  @media screen and (max-width: 340px) {
+    padding: 3rem 0.5rem 3rem;
+
+    .hero-heading {
+      padding-left: 0.7rem;
+    }
+  }
+}
+
+/* ----------SECTION-1------------- */
+/* on click of the button, direct to the 2nd section */
+.hero-banner {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 10.3125rem);
+  gap: 0.625rem;
+  padding: 1.325rem 0 0;
+
   .hero-content {
     display: flex;
     flex-direction: column;
+    align-items: start;
     justify-content: top;
     row-gap: 1.875rem;
-    width: 360px;
+    max-width: 37.65rem;
   }
 
   .hero-heading {
     font-size: 3.4375rem;
     line-height: 1.35;
     font-weight: 600;
-    color: var(--primary-font-color);
+    color: var(--color-primary);
 
     & span {
       position: relative;
@@ -241,18 +273,36 @@ main {
       width: 100%;
       height: 100%;
       left: 0;
-      background: var(--gradient-primary);
+      background-image: var(--gradient-primary);
       z-index: -1;
       transform: scale(1.07, 1.05) skewX(-15deg);
     }
+
+    & span:nth-of-type(2)::after {
+      z-index: -2;
+    }
   }
-  
+
+  .hero-subheading {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-primary);
+  }
+
+  .hero-button {
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--color-secondary);
+    color: var(--color-secondary);
+    font-size: 1.0625rem;
+    padding: 0 0 0.125rem;
+  }
+
   .hero-image {
     display: grid;
     justify-content: top;
-    /* place-items: center; */
-    min-width: 360px;
-    max-width: 450px;
+    min-width: 16rem;
+    max-width: 28.125rem;
 
     & img {
       width: 100%;
@@ -260,22 +310,287 @@ main {
     }
   }
 
+  @media screen and (max-width: 645px) {
+    flex-direction: column;
+    row-gap: 2rem;
+    padding-top: 0;
+
+    .hero-image {
+      order: -1;
+      max-width: 100%;
+      align-items: center;
+    }
+
+    .hero-heading {
+      font-size: 2.4rem;
+    }
+
+    .hero-subheading {
+      font-size: 1.25rem;
+    }
+
+    .hero-button {
+      font-size: 1rem;
+    }
+  }
 }
 
+/* Add transform and lazy loading of images */
+  /* transform: scale(0, 0); */
+  /* transition: transform 1s, opacity 1s; */
+.features, .operations, .testimonials {
+  padding: 9.375rem 7.5rem;
+  border-top: 1px solid #ddd;
 
-/* .hero-image, .hero-banner {
-    margin-left: auto;
-} */
+  @media screen and (max-width: 1020px) {
+    padding: 6rem 4rem;
+  }
 
-/* Understand this code first or else
-implement your own */
-/* .hero-banner {
+  @media screen and (max-width: 720px) {
+    padding: 4rem 0rem;
+  }
+}
+
+.feature-description, .operation-description, .testimonial-description {
+  color: #666;
+  font-weight: 300;
+}
+
+/* For each section(i.e features, operations, testimonials) */
+.section-description {
+  margin: 0 0rem 5rem;
+  max-width: 50rem;
+
+  & h2 {
+    color: var(--color-secondary);
+    font-size: 1.125rem;
+    margin-bottom: 0.625rem;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  & .section-heading {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    font-weight: 500;
+    color: var(--color-primary);
+  }
+}
+
+/* ------------SECTION-2------------ */ 
+.features {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+
+  .features-all {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    gap: 5rem;
+    width: 100%;
+  }
+
+  .feature-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(226px, 1fr));
+    align-items: start;
+    gap: 2.5rem;
+
+    .feature-image {
+      /* display: flex; */
+      max-width: 35rem;
+
+      & img {
+        /* justify-self: center; */
+        width: 100%;
+      }
+    }
+
+    .feature-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      max-width: 25rem;
+
+      .feature-icon {
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        background-color: var(--color-secondary-opacity);
+        margin: 0 0 0.625rem;
+      }
+
+      .feature-icon svg {
+        width: 25px;
+        height: 25px;
+        fill: var(--color-secondary);
+      }
+
+      .feature-heading {
+        color: var(--color-primary);
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    .features-all {
+      gap: 3.5rem;
+    }
+  }
+
+  @media screen and (max-width: 570px) {
+    .features-all {
+      gap: 4rem;
+    }
+
+    .feature-image:nth-of-type(2n) {
+      order: -1;
+    }
+
+    .feature-card {
+      max-width: 100%;
+    }
+  }
 }
 
-.hero-image {
+
+/* ------------SECTION-3------------ */
+
+.operations {
+  display: flex;
+  flex-direction: column;
+  /* background-color: orange; */
+
+  .operation-tab-container {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+  }
+
+  .operation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
     width: 100%;
-    grid-column: 2/3;
-    grid-row: 1/span 4;
-} */
+
+    & button {
+      border: none;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 10rem;
+      padding: 0.78125rem 2.8125rem;
+      transition: background-color 300ms;
+      transform: translateY(-50%);
+
+      /* transform- -66% on clicked */
+
+      & span {
+        font-weight: 600;
+        margin-right: 0.625rem;
+      }
+    }
+
+    .button-1 {
+      background-color: var(--color-tertiary);
+    }
+
+    .button-1:hover {
+      background-color: var(--color-tertiary-shade);
+    }
+
+    .button-2 {
+      background-color:var(--color-secondary);
+    }
+
+    .button-2:hover {
+      background-color: var(--color-secondary-shade);
+    }
+
+    .button-3 {
+      background-color: var(--color-red);
+    }
+
+    .button-3:hover {
+      background-color: var(--color-red-shade);
+    }
+  }
+
+  .operation-content {
+    display: flex;
+    justify-content: start;
+    /* padding: 25px 70px 65px; */
+    padding: 1.5625rem 4.375rem 4.0625rem;
+    gap:  0.625rem 1.875rem;
+
+    .operation-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      flex-shrink: 0;
+
+      & svg {
+        height: 27.5px;
+        width: 27.5px;
+      }
+    }
+
+    .operation-icon-1 {
+      background-color: var(--color-secondary-opacity);
+
+      & svg {
+        fill: var(--color-secondary-shade);
+      }
+    }
+
+    .operation-icon-2 {
+      background-color: var(--color-tertiary-opacity);
+
+      & svg {
+        fill: var(--color-tertiary-shade);
+      }
+    }
+
+    .operation-icon-3 {
+      background-color: var(--color-red-opacity);
+
+      & svg {
+        fill: var(--color-red-shade);
+      }
+    }
+
+      .operation-detail {
+        max-width: 25rem;
+      }
+
+      .operation-heading {
+        font-size: 1.40625rem;
+        font-weight: 500;
+        margin-bottom: 0.625rem;
+        color: var(--color-primary);
+      }
+  }
+
+  @media screen and (max-width: 570px) {
+    .operation-buttons {
+      gap: 0.5rem;
+  
+      & button {
+        font-size: 0.875rem;
+        padding: 0.4rem 1rem;
+      }
+    }
+
+    .operation-content {
+      flex-wrap: wrap;
+      padding: 1.5625rem 2.375rem 4.0625rem;
+    }
+
+  }
+}
