@@ -61,6 +61,7 @@ button {
 body {
   min-height: 100vh;
   background-color: #f3f3f3;
+  line-height: 1.9;
 }
 
 .fixed {
@@ -84,7 +85,9 @@ header {
   ); /* activate this bg when user scrolls past the hero-banner
     /* background-color: red; */
 
-  .bankist-logo, .nav-link, .open-account-btn {
+  .bankist-logo,
+  .nav-link-li,
+  .open-account-btn {
     transition: background-color 500ms, opacity 500ms;
   }
 
@@ -97,7 +100,7 @@ header {
     align-items: center;
   }
 
-  .nav-link.nav-link:nth-of-type(4) {
+  .nav-link-li:nth-of-type(4) {
     border-radius: 1.875rem;
   }
 
@@ -111,7 +114,7 @@ header {
     color: var(--color-primary-shade);
   }
 
-  .nav-link {
+  .nav-link-li {
     margin-left: 2.5rem;
     color: var(--color-primary);
     cursor: pointer;
@@ -146,7 +149,7 @@ header {
       font-size: 1rem;
     }
 
-    .nav-link {
+    .nav-link-li {
       margin-left: 1rem;
     }
   }
@@ -170,37 +173,44 @@ header {
       align-items: center;
       width: 100vw;
       /* Change this */
-      background-color: rgb(236, 236, 236);
       z-index: 100;
 
-      .nav-link {
-        padding: 0.625rem 0;
+      .nav-link-li {
         width: 100%;
         text-align: center;
         transition: all 300ms;
         margin-left: 0;
+
+        .nav-link {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          padding: 0.625rem 0;
+          background-color: rgb(236, 236, 236);
+          transition: background-color 250ms;
+        }
+
+        .nav-link:hover {
+          background-color: rgb(220, 220, 220);
+        }
       }
 
-      /* Change this */
-      .nav-link:hover {
-        background-color: rgb(220, 220, 220);
-      }
-
-      .nav-link:nth-of-type(4) {
+      .nav-link-li:nth-of-type(4) {
         padding: 0;
       }
 
-      .nav-link:nth-of-type(4) .open-account-btn {
+      .nav-link-blur {
+        color: #989898e2;
+        opacity: 1;
+      }
+
+      .open-account-btn {
         width: 100%;
         height: 100%;
         border: none;
         border-radius: 0;
         transition: all 300ms;
       }
-
-      /* .open-account-btn:hover {
-        background-color: var(--color-secondary-shade);
-      } */
     }
 
     .three-bars,
@@ -237,12 +247,7 @@ header {
   }
 }
 
-/* body {
-  position: relative;
-} */
-
 /* main */
-
 .highlight-span {
   position: relative;
   display: inline-block;
@@ -255,10 +260,10 @@ header {
   height: 100%;
   left: 0;
   z-index: -1;
+  opacity: 0.7;
   background-image: var(--gradient-primary);
   transform: scale(1.07, 1.05) skewX(-15deg);
 }
-
 
 main {
   display: flex;
@@ -266,7 +271,6 @@ main {
   margin-top: 5.625rem;
   padding: 4.6875rem 0rem 0rem;
 
-  /* Check vertical padding */
   @media screen and (max-width: 720px) {
     row-gap: 4rem;
   }
@@ -280,50 +284,54 @@ main {
   }
 }
 
-.header-blur, .main-blur, .footer-blur {
+.header-blur,
+.main-blur,
+.footer-blur {
   opacity: 0.2;
-  /* background-color: rgba(200, 194, 194, 0.2); */
 }
 
-/* -----Open Account */
+/* -----modal-section------- */
 .modal {
-  /* display: none; */
   display: grid;
   place-items: center;
   position: fixed;
-  z-index: 102;
-  height: 100%;
-  width: 100%;
   top: 0;
   left: 0;
-  opacity: 1;
-  box-shadow: 0 2.5rem 3.75rem rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 999;
+  backdrop-filter: blur(0.25rem);
+  transition: all 0.5s;
+  background-color: #00000080;
 
   .modal-container {
     position: relative;
-    min-height: 30rem;
-    max-width: 60rem;
+    max-width: 37.5rem;
     background-color: #f3f3f3;
-    background-color: grey;
+    margin: 0rem 1rem;
     padding: 3.125rem 3.75rem;
     color: var(--color-primary);
-    
-      .modal-close {
-        position: absolute;
-        top: 0.625rem;
-        right: 1rem;
-        font-size: 2.5rem;
-        font-family: inherit;
-        border: none;
-        background: none;
-        color: inherit;
-      }
+    box-shadow: 0 2.5rem 3.75rem rgba(0, 0, 0, 0.3);
+
+    .modal-close {
+      position: absolute;
+      top: 0.1rem;
+      right: 1rem;
+      font-size: 2.5rem;
+      font-family: inherit;
+      border: none;
+      background: none;
+      color: inherit;
+    }
 
     .modal-header {
       font-size: 2.03125rem;
-      font-weight: 500;
+      font-weight: 600;
       margin: 0 0 2.8125rem;
       line-height: 1.5;
+      max-width: 27.8125rem;
 
       .highlight-span {
         z-index: 1;
@@ -336,30 +344,67 @@ main {
       justify-content: center;
       align-items: start;
       flex-direction: column;
-      gap: 2.5rem;
+      gap: 1.5625rem;
+
+      & button {
+        align-self: center;
+        background-color: var(--color-secondary);
+        font-family: inherit;
+        font-weight: 500;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5rem;
+        margin: 0.625rem 0 0;
+        padding: 0.78125rem 2.8125rem;
+        font-size: 1.0625rem;
+        transition: all 300ms;
+      }
+
+      & button:hover {
+        background-color: var(--color-secondary-shade);
+      }
+    }
+  }
+
+  .modal-form-group {
+    display: flex;
+    gap: 1.875rem;
+
+    & label {
+      width: 7.4rem;
+      font-size: 1.0625rem;
+    }
+
+    & input {
+      border: 1px solid #ddd;
+      border-radius: 0.3125rem;
+      padding: 0.625rem 0.9375rem;
+      width: 14.325rem;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .modal-container {
+      padding: 3.125rem 2.125rem;
+    }
+  }
+
+  @media screen and (max-width: 492px) {
+    .modal-container {
+      margin: 0;
+      padding: 1.5rem;
     }
 
     .modal-form-group {
-      display: flex;
-      gap: 1.875rem;
-
-      & label {
-        width: 7.4rem;
-        font-size: 1.0625rem;
-      }
-
-      & input {
-        border: 1px solid #ddd;
-        border-radius: 0.3125rem;
-        padding: 0.625rem 0.9375rem;
-      }
+      flex-wrap: wrap;
+      gap: 0.625rem;
     }
-
   }
 }
 
 .modal-visible {
-  display: grid;
+  visibility: visible;
+  opacity: 1;
 }
 
 /* ----------SECTION-1------------- */
@@ -680,7 +725,6 @@ main {
     .operation-detail {
       max-width: 45rem;
       font-size: 1.0625rem;
-      line-height: 1.7;
     }
 
     .operation-heading {
@@ -746,16 +790,27 @@ main {
       min-height: 31.25rem;
 
       .testimonial-heading {
+        position: relative;
+        align-self: flex-start;
         font-size: 1.40625rem;
         color: var(--color-primary);
         font-weight: 500;
+      }
+
+      .testimonial-heading::before {
+        position: absolute;
+        content: "\201C";
+        top: -9.55rem;
+        left: -4.2rem;
+        font-size: 12.5rem;
+        color: var(--color-secondary);
+        transform: scale(0.65, 1);
       }
 
       .testimonial-description {
         margin: 0 0 1.25rem;
         font-size: 1.0625rem;
         font-weight: 300;
-        line-height: 1.9;
       }
 
       .testimonial-author {
@@ -767,6 +822,7 @@ main {
           height: 65px;
           width: 65px;
           border-radius: 50%;
+          align-self: center;
         }
 
         .testimonial-address {
@@ -776,14 +832,13 @@ main {
             color: var(--color-primary);
             font-size: 1.0625rem;
             font-weight: 500;
-            line-height: 1.9;
           }
 
           .testimonial-location {
             color: #666666;
             font-size: 0.9375rem;
             font-weight: 300;
-            line-height: 2;
+            /* line-height: 2; */
           }
         }
       }
@@ -840,7 +895,7 @@ main {
   padding: 6.25rem 1.875rem;
   gap: 4.25rem;
   background-color: #37383d;
-  color: #FFF;
+  color: #fff;
   border-bottom: 1px solid #444;
 
   & h2 {
@@ -865,7 +920,6 @@ main {
   }
 }
 
-
 /* ---------FOOTER--------- */
 
 footer {
@@ -874,7 +928,7 @@ footer {
   gap: 50px 0px;
   background-color: #37383d;
   padding: 6.25rem 1.875rem;
-  color: #EEE;
+  color: #eee;
 
   .footer-links-ul {
     display: grid;
@@ -891,7 +945,7 @@ footer {
 
   .footer-copyright {
     text-align: center;
-    color: #AAA;
+    color: #aaa;
     font-size: 0.875rem;
 
     & span {
@@ -899,4 +953,3 @@ footer {
     }
   }
 }
-
