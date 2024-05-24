@@ -40,7 +40,7 @@
             </div>
         </div>
     </section>
-
+    
     <header>
         <img src="assets/logo.png" alt="bankist-logo" class="bankist-logo">
         <input type="checkbox" class="three-bars-checkbox">
@@ -49,11 +49,12 @@
         </a>
         <nav class="nav-links">
             <ul class="nav-links-ul">
-                <li class="nav-link-li nav-link-features"><a class="nav-link" href="#section-2">Features</a></li>
-                <li class="nav-link-li nav-link-operations"><a  class="nav-link" href="#section-3">Operations</a></li>
-                <li class="nav-link-li nav-link-testimonials"><a class="nav-link" href="#section-4">Testimonials</a></li>
+                <li class="nav-link-li "><a class="nav-item nav-link" href="#section-2">Features</a></li>
+                <li class="nav-link-li "><a class="nav-item nav-link" href="#section-3">Operations</a></li>
+                <li class="nav-link-li "><a class="nav-item nav-link" href="#section-4">Testimonials</a>
+                </li>
                 <li class="nav-link-li">
-                    <button class="open-account-btn sign-up-btn">
+                    <button class=" nav-item sign-up-btn open-account-btn">
                         Open account
                     </button>
                 </li>
@@ -63,10 +64,10 @@
     </header>
 
     <main>
-       
+
 
         <!-- SECTION-1 -->
-        <section class="hero-banner">
+        <section class="hero-banner" id="section-1">
             <div class="hero-content">
                 <h1 class="hero-heading">
                     When
@@ -84,7 +85,7 @@
 
 
         <!-- SECTION-2 -->
-        <section class="features" id="section-2">
+        <section class="section features" id="section-2">
             <div class="section-description">
                 <h2>Features</h2>
                 <h3 class="section-heading">Everything you need in a modern bank and more.</h3>
@@ -93,7 +94,7 @@
             <div class="features-all">
                 <article class="feature-details">
                     <div class="feature-image">
-                        <img src="assets/digital.jpg" alt="Computer image" loading="lazy">
+                        <img data-src= "assets/digital.jpg" class="lazy-img" src="assets/digital-lazy.jpg" alt="Computer image" loading="lazy">
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -121,13 +122,13 @@
                             intuitive platform.</p>
                     </div>
                     <div class="feature-image">
-                        <img src="assets/grow.jpg" alt="Plant" loading="lazy">
+                        <img data-src= "assets/grow.jpg" class="lazy-img" src="assets/grow-lazy.jpg" alt="Plant" loading="lazy">
                     </div>
                 </article>
 
                 <article class="feature-details">
                     <div class="feature-image">
-                        <img src="assets/card.jpg" alt="Credit card" loading="lazy">
+                        <img data-src= "assets/card.jpg" class="lazy-img" src="assets/card-lazy.jpg" alt="Credit card" loading="lazy">
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -145,7 +146,7 @@
         </section>
 
         <!-- SECTION-3 -->
-        <section class="operations" id="section-3">
+        <section class="section operations" id="section-3">
             <div class="section-description">
                 <h2>Operations</h2>
                 <h3 class="section-heading">Everything as simple as possible, but no simpler.</h3>
@@ -153,17 +154,17 @@
 
             <div class="operation-tab-container">
                 <div class="operation-buttons">
-                    <button class="operation-button button-1 button-active">
+                    <button class="operation-button button-1 button-active" data-tab="1">
                         <span>01</span>
                         Instant Transfers
                     </button>
 
-                    <button class="operation-button button-2">
+                    <button class="operation-button button-2" data-tab="2">
                         <span>02</span>
                         Instant Loans
                     </button>
 
-                    <button class="operation-button button-3">
+                    <button class="operation-button button-3" data-tab="3">
                         <span>03</span>
                         Instant Closing
                     </button>
@@ -227,7 +228,7 @@
         </section>
 
         <!-- SECTION-4 -->
-        <section class="testimonials" id="section-4">
+        <section class="section testimonials" id="section-4">
             <div class="section-description">
                 <h2>Not sure yet?</h2>
                 <h3 class="section-heading">Millions of Bankists are already making their lives simpler.</h3>
@@ -240,9 +241,9 @@
                 <div class="testimonial testimonial-1 testimonial-active">
                     <h3 class="testimonial-heading">Best financial decision ever!</h3>
                     <p class="testimonial-description">
-                        Joining Bankist has been an absolute game-changer for me. 
-                        From the moment I became a Bankist user, my financial life has 
-                        seen a remarkable transformation. The convenience, efficiency, 
+                        Joining Bankist has been an absolute game-changer for me.
+                        From the moment I became a Bankist user, my financial life has
+                        seen a remarkable transformation. The convenience, efficiency,
                         and security offered by Bankist's services are unparalleled.
                     </p>
                     <address class="testimonial-author">
@@ -258,10 +259,10 @@
                 <div class="testimonial testimonial-2">
                     <h3 class="testimonial-heading">The last step to becoming a complete minimalist</h3>
                     <p class="testimonial-description">
-                        Joining Bankist was indeed the last step 
-                        I needed to complete my journey towards minimalism. 
-                        If you're ready to simplify your financial life and 
-                        embrace a minimalist mindset, 
+                        Joining Bankist was indeed the last step
+                        I needed to complete my journey towards minimalism.
+                        If you're ready to simplify your financial life and
+                        embrace a minimalist mindset,
                         I highly recommend joining Bankist today.
                     </p>
                     <address class="testimonial-author">
@@ -277,10 +278,10 @@
                 <div class="testimonial testimonial-3">
                     <h3 class="testimonial-heading">Finally free from old-school banks</h3>
                     <p class="testimonial-description">
-                        After years of frustration with traditional banking systems, 
-                        I decided to take the leap and join Bankist. 
-                        The transformation has been nothing short of remarkable. 
-                        With Bankist, I've experienced true freedom 
+                        After years of frustration with traditional banking systems,
+                        I decided to take the leap and join Bankist.
+                        The transformation has been nothing short of remarkable.
+                        With Bankist, I've experienced true freedom
                         from the constraints and complexities of old-school banks
                     </p>
                     <address class="testimonial-author">
@@ -304,7 +305,7 @@
         </section>
 
         <!-- SECTION-5 -->
-        <section class="sign-up">
+        <section class="section sign-up" id="section-5">
             <h2>The best day to join Bankist was one year ago.
                 The second best is today!
             </h2>
@@ -316,7 +317,7 @@
 
 
 
-    <footer>
+    <footer class="footer">
         <ul class="footer-links-ul">
             <li>
                 <a href="#">About</a>
